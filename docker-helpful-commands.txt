@@ -1,0 +1,220 @@
+https://Docker----
+docker is configured to use the default machine with IP 192.168.99.100
+docker pull mysql
+
+docker run --name mysql-container -e MYSQL_ROOT_PASSWORD=password -e MYSQL_DATABASE=test -e MYSQL_USER=sa -e MYSQL_PASSWORD=pass@123 -d mysql:latest
+
+docker build . -t student-info
+
+
+docker run --name student-info -p 8181:8181 --link mysql-container:mysql -d student-info
+
+docker stop 3c36844fcf6b
+docker rm 3c36844fcf6b
+
+docker exec -it 7686415d8793 bash -c 'curl -X GET http://localhost:8181/StudentInfo/student/allStudents'
+First Find the default IP address of the docker running application
+docker-machine ip default 7276012387
+
+192.168.99.100
+
+curl -X GET http://192.168.99.100:8181/StudentInfo/student/allStudents
+curl --data '{"name":"Amsidh","std":"BE"}' -H "Content-Type: application/json" -X POST http://192.168.99.100:8181/StudentInfo/student/saveStudent
+
+$ docker run --name oauth2springbootsecurity -p 9191:8181 -e "SPRING_PROFILES_ACTIVE=postgres" --link oauthdatabase-postgres:postgres -d amsidhlokhande/oauth2springbootsecurity
+
+
+
+docker run --name postgresOAuthDatabase -p 5050:5432 -e POSTGRES_PASSWORD=postgres -e POSTGRES_DB=postgres -d postgres
+
+docker run -it --rm --link postgresOAuthDatabase:postgres postgres psql -h postgres -U postgres
+
+
+curl -X POST -i -H "authorization: Basic c3ByaW5nLXNlY3VyaXR5LW9hdXRoMi1yZWFkLXdyaXRlLWNsaWVudDpzcHJpbmctc2VjdXJpdHktb2F1dGgyLXJlYWQtd3JpdGUtY2xpZW50LXBhc3N3b3JkMTIzNA==" -F grant_type=password -F username=admin -F password=admin1234 -F client_id=spring-security-oauth2-read-write-client http://192.168.99.100:9191/rest/oauth/token
+curl -X GET -H "authorization: Bearer 922f1875-27fa-4bad-a280-846c9b14c1bf"   http://192.168.99.100:9191/rest/secured/company/
+
+
+docker run --name mysql-container -e MYSQL_ROOT_PASSWORD=password -e MYSQL_DATABASE=test -e MYSQL_USER=sa -e MYSQL_PASSWORD=pass@123 -d mysql:latest
+
+docker build . -t student-info
+
+
+
+SECURITY WARNING: You are building a Docker image from Windows against a non-Windows Docker host. 
+All files and directories added to build context will have '-rwxr-xr-x' permissions. 
+It is recommended to double check and reset permissions for sensitive files and directories.
+
+docker run --name student-info -p 8181:8181 --link mysql-container:mysql -d student-info
+
+
+
+remove images
+
+docker rmi imageId
+
+
+
+On Local machine
+
+curl -X POST -i -H "authorization: Basic c3ByaW5nLXNlY3VyaXR5LW9hdXRoMi1yZWFkLXdyaXRlLWNsaWVudDpzcHJpbmctc2VjdXJpdHktb2F1dGgyLXJlYWQtd3JpdGUtY2xpZW50LXBhc3N3b3JkMTIzNA==" -F grant_type=password -F username=admin -F password=admin1234 -F client_id=spring-security-oauth2-read-write-client http://localhost:8080/oauth/token
+
+curl -X GET-H "authorization: Bearer 57ef2000-ca30-4259-aa04-e854468d615f"  http://localhost:8080/secured/company/
+
+
+On docker
+
+
+curl -X POST -i -H "authorization: Basic c3ByaW5nLXNlY3VyaXR5LW9hdXRoMi1yZWFkLXdyaXRlLWNsaWVudDpzcHJpbmctc2VjdXJpdHktb2F1dGgyLXJlYWQtd3JpdGUtY2xpZW50LXBhc3N3b3JkMTIzNA==" -F grant_type=password -F username=admin -F password=admin1234 -F client_id=spring-security-oauth2-read-write-client http://192.168.99.100:9191/rest/oauth/token
+curl -X GET -H "authorization: Bearer 922f1875-27fa-4bad-a280-846c9b14c1bf"   http://192.168.99.100:9191/rest/secured/company/
+
+
+https://Docker----
+docker is configured to use the default machine with IP 192.168.99.100
+docker pull mysql
+
+docker run --name mysql-container -e MYSQL_ROOT_PASSWORD=password -e MYSQL_DATABASE=test -e MYSQL_USER=sa -e MYSQL_PASSWORD=pass@123 -d mysql:latest
+
+docker build . -t student-info
+
+
+docker run --name student-info -p 8181:8181 --link mysql-container:mysql -d student-info
+
+docker stop 3c36844fcf6b
+docker rm 3c36844fcf6b
+
+docker exec -it 7686415d8793 bash -c 'curl -X GET http://localhost:8181/StudentInfo/student/allStudents'
+First Find the default IP address of the docker running application
+docker-machine ip default
+192.168.99.100
+
+curl -X GET http://192.168.99.100:8181/StudentInfo/student/allStudents
+curl --data '{"name":"Amsidh","std":"BE"}' -H "Content-Type: application/json" -X POST http://192.168.99.100:8181/StudentInfo/student/saveStudent
+
+$ docker run --name oauth2springbootsecurity -p 9191:8181 -e "SPRING_PROFILES_ACTIVE=postgres" --link oauthdatabase-postgres:postgres -d amsidhlokhande/oauth2springbootsecurity
+
+
+
+docker run --name postgresOAuthDatabase -p 5050:5432 -e POSTGRES_PASSWORD=postgres -e POSTGRES_DB=postgres -d postgres
+
+docker run -it --rm --link postgresOAuthDatabase:postgres postgres psql -h postgres -U postgres
+
+
+curl -X POST -i -H "authorization: Basic c3ByaW5nLXNlY3VyaXR5LW9hdXRoMi1yZWFkLXdyaXRlLWNsaWVudDpzcHJpbmctc2VjdXJpdHktb2F1dGgyLXJlYWQtd3JpdGUtY2xpZW50LXBhc3N3b3JkMTIzNA==" -F grant_type=password -F username=admin -F password=admin1234 -F client_id=spring-security-oauth2-read-write-client http://192.168.99.100:9191/rest/oauth/token
+curl -X GET -H "authorization: Bearer 922f1875-27fa-4bad-a280-846c9b14c1bf"   http://192.168.99.100:9191/rest/secured/company/
+
+
+
+sudo service docker restart
+
+
+
+
+docker run --name postgresOAuthDatabase -p 5050:5432 -e POSTGRES_USER=postgres -e POSTGRES_PASSWORD=postgres -e POSTGRES_DB=postgres -d postgres:latest
+check postgres database is working or not
+docker run -it --rm --link postgresOAuthDatabase:postgres postgres psql -h postgres -U postgres connect postgres;
+select datname from pg_database where datistemplate = false;
+
+exit from postgresdb-#   use \q
+
+
+docker run --name mysql -e MYSQL_ROOT_PASSWORD=password -e MYSQL_DATABASE=mysqldb -e MYSQL_USER=sa -e MYSQL_PASSWORD=password -d mysql:latest
+
+
+docker run --name oauth2springbootsecurity -p 9191:8181 -e "SPRING_PROFILES_ACTIVE=postgres" -e "DATABASE_HOST"="192.168.99.100" -e "DATABASE_PORT"="5050" -e "DATABASE_NAME"="postgres" -e "DATABASE_USER"="postgres" -e "DATABASE_PASSWORD"="postgres" --link postgresOAuthDatabase:postgres -d amsidhlokhande/oauth2springbootsecurity
+
+
+On EC2 ubuntu server use private ip as the internal host address for the containers.
+
+
+docker run --name oauth2springbootsecurity -p 9191:8181 -e "SPRING_PROFILES_ACTIVE=postgres" -e "DATABASE_HOST"="172.31.20.80" -e "DATABASE_PORT"="5050" -e "DATABASE_NAME"="postgres" -e "DATABASE_USER"="postgres" -e "DATABASE_PASSWORD"="postgres" --link postgresOAuthDatabase:postgres -d amsidhlokhande/oauth2springbootsecurity
+curl -X POST -i -H "authorization: Basic c3ByaW5nLXNlY3VyaXR5LW9hdXRoMi1yZWFkLXdyaXRlLWNsaWVudDpzcHJpbmctc2VjdXJpdHktb2F1dGgyLXJlYWQtd3JpdGUtY2xpZW50LXBhc3N3b3JkMTIzNA==" -F grant_type=password -F username=admin -F password=admin1234 -F client_id=spring-security-oauth2-read-write-client http://192.168.99.100:9191/rest/oauth/token
+curl -X GET -H "authorization: Bearer 922f1875-27fa-4bad-a280-846c9b14c1bf"   http://192.168.99.100:9191/rest/secured/company/
+
+
+To export docker to a tar file
+
+docker export [OPTIONS] CONTAINER
+Options   : --output , -o
+example:
+docker export red_panda > latest.tar
+docker export --output="latest.tar" red_panda
+
+
+
+
+
+
+
+
+#!/bin/bash
+sudo apt-get update
+sudo apt-get install apache2 -y
+sudo apt-get install sysv-rc-conf -y
+sysv-rc-conf apache2 on
+
+
+
+
+Tagging a image 
+                Image Name               Tagged Name
+docker tag student-info:latest amsidhlokhande/student-info:1.0.0
+
+
+
+
+Docker-Compose Command
+ocker-compose build    -> It creates images. If you already has images locally or on docker hub. User below 
+command to create container from the docker images
+docker-compose create   -> This will create only docker containers and then call the command docker-compose start. to start the containers
+OR
+docker-compose up   -> this will create docker containers and start them
+
+
+
+
+
+student-info-service_1  | Sat Apr 07 07:32:52 UTC 2018 WARN: Establishing SSL connection without server's identity verification is not recommended. According to MySQL 5.5.45+, 5.6.26+ and 5.7.6+ requirements SSL connection must be established by default if explicit option isn't set. For compliance with existing applications not using SSL the verifyServerCertificate property is set to 'false'. You need either to explicitly disable SSL by setting useSSL=false, or set useSSL=true and provide truststore for server certificate verification.
+
+
+
+$ docker run --name student-info -p "8080:8181" -e "spring.datasource.url:jdbc:mysql://192.168.99.100:3306/mysqldb" -e "spring.datasource.username:sa" -e "spring.datas
+ource.password:password" -e "spring.jpa.hibernate.ddl-auto:create"   -d amsidhlokhande/student-info:1.0.0
+
+//Successfully docker-compose file
+version: "2.1"
+services:
+  mysqldatabase:
+   container_name: mysql-database
+   image: mysql:latest
+   environment:
+    MYSQL_DATABASE: mysqldb
+    MYSQL_ROOT_PASSWORD: password@123
+    MYSQL_ROOT_HOST: '%'
+    MYSQL_USER: sa
+    MYSQL_PASSWORD: password@321
+   ports: 
+   - "3306:3306"
+   restart: always
+   healthcheck:
+    test: mysqladmin -uroot -ppassword@123 ping
+    interval: 2s
+    timeout: 5s
+    retries: 30     
+   
+  student-info-service:
+   restart: always 
+   container_name: student-info
+   image: student-info:latest
+   depends_on: 
+    mysqldatabase: 
+                 condition: service_healthy    
+   ports: 
+    - 8080:8181
+   environment: 
+    spring.datasource.url: jdbc:mysql://mysqldatabase:3306/mysqldb?useSSL=false
+    spring.datasource.username: root
+    spring.datasource.password: password@123
+//****************************
+
+
+docker login -u AWS -p eyJwYXlsb2FkIjoiTzlCRTJqYmtEVzVEajZUZWRTeW5vakc3L1RhdSs0cG80NHBvRWNqZDJSWjZpWFRlOFRjaUMvZzg2TUtoT0lVdTBQV1BJUzdhZy9mRlo2cFpIT2djTnE3MWU0ZUhTdWZrT1lpM1RyR1d5NG1sTitsOGRhcVRna1NKNUM0Mkt3NHpkL1VkWmR0RkF5VmNWKzJlN2hMK2tIS2N3VW9oQlpWNGJucGhWL2VTem5YRTRMUndVYVhmOVhrYVdlMkNGd1ZsbmdyQjd2dHNpeFJCVW9PQ2VaZFg3c0VqekRhQWxsUEthOTJWYklpSzNmL2Nsd1dwSzNKV0RKb2tQRmx0OS9UQW1KWWk1d1BmWENQbGFmS2tCaVBiUDFLd0xONHdFcUYyUStGWW9Rd1VHcnlxWEpURkFJSlFVV3pRaTJXdDF3NnpQb0FIRktieVFKUXdWMEhrOGgxNlBVa3VINUQyeFFZVWVMcWlIZkJIcVVDY3YvWE9zRnplVlY0azM1d1JSK25NYlF1ckZTb0ZKd2Zma1JNYnZvd2RLZFFVc2pHUk1CenVreXZ4bjRzYVgyclkrelJXVHF5Nmk3M3ZFVTAzdmhiM0o4dHhoeSsvL2dYZUIyQnBpOG50a1k5RFRndTZ4bTVoL2dnUCtBWjRZOERhZXplQ1l4VmNmcjFIL3FRL202SWZlSGIxWHY0bGpOTzZlUVo5K3Rnc2ZISDA4UlZtTVJQaFB2N2ZEMys1QTI5STRLL09VUGg3aHlkUldVdjYySmtZVlEybE9RRTFSd2JoRWIzd00vN1AxaDBVU3J0TXBsVnVsSmlwdTQxZVI2SUYrS2UvS0U4TXNoSlhLODVzeFRpSWQ2QlhFMGlmaHd4SG4vUUJ1dytRY1NtYjNiMUc1cFdLVktsaTRtaVBYTkhZb3VPKzJ5THl6ZHZiNXpic3ZrVGVacVNNUHVQdlZQekE4eGRIZHMvaDgvbHFNc3JncmNPcUZBV2VqSFY5UlJHUnpqTVowdCtxdHN0MHk3UTkxZWV3eGdtbVpXalZrblhyeWpyelRSRGJvREN0ZDFsVDBYbEZxV29ZWnlqL01uSEFkS01adGU4Z0ErRS9uRGt3cG1xRllKRnZXdm9FU084S3BMdFNMTndXeTZUNE03ZVVpU0o3aldiYXIweUdLMlU0dGpwZ2xkbHlKVHBJMTBtN3VkQ0Q0QzNSZjgrVU5USjY0dU9aRHBST1RuWHIvYlJjTC9PZUtlVUlyRitYM28zd2NyQnR0Mld6Y3dZT1V5Yi9mSXA4Wm1NVGVMc0FTczIwcjB5eXhQRGJ0T3JJZDVoRGhOMzRwTFJSeVF2UWxYTlpCSzg9IiwiZGF0YWtleSI6IkFRSUJBSGlIV2FZVG5SVVdDYm56KzdMdk1HK0FQdlRIekhsQlVROUZxRW1WMjZCZHd3RURzNGJRRzFVSCtoaGE2S053UGgzSkFBQUFmakI4QmdrcWhraUc5dzBCQndhZ2J6QnRBZ0VBTUdnR0NTcUdTSWIzRFFFSEFUQWVCZ2xnaGtnQlpRTUVBUzR3RVFRTU5NWTk3SHVmMGFwVkdKMTVBZ0VRZ0R0ZENkWG1nSzg2YnRDMmUwdmIvSnA4b0VML2NhWTdpNlRkTFhiZTQzR0ZHUktyUE9TRy9NVzdNM056S2FsTTVkZU5wRW44dVBrZkMwZ2xRZz09IiwidmVyc2lvbiI6IjIiLCJ0eXBlIjoiREFUQV9LRVkiLCJleHBpcmF0aW9uIjoxNTIxNTMxMTEzfQ== https://683731914281.dkr.ecr.ap-south-1.amazonaws.com
